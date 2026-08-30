@@ -10,21 +10,12 @@ app = FastAPI(
     version="0.1.0",
 )
 
-# Get frontend URL from env and strip trailing slash if present
-frontend_url = os.getenv("FRONTEND_URL", "http://localhost:3000").rstrip("/")
-
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://website-qa-engine.vercel.app",  # Hardcoded production fallback
-    frontend_url,
-]
-
+# Senior Dev Fix: Wildcard CORS configuration to unblock preflight completely
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
+    allow_origins=["*"],
+    allow_credentials=False,  # Must be False when allow_origins=["*"]
+    allow_methods=["GET", "POST", "OPTIONS", "PUT", "DELETE"],
     allow_headers=["*"],
     expose_headers=["*"],
 )
