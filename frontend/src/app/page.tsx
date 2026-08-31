@@ -413,14 +413,30 @@ return ( <main suppressHydrationWarning className="min-h-screen bg-[#fafafa] tex
       )}
     </section>
 
-    {/* FOOTER */}
-    <footer className="mt-auto flex flex-col items-center justify-between gap-3 border-t border-zinc-200 py-6 text-[11px] text-zinc-400 sm:flex-row">
-      <span>Website QA Engine</span>
-
+  {/* FOOTER */}
+<footer className="mt-auto border-t border-zinc-200 py-6 text-[11px] text-zinc-400">
+  <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
+    <div className="flex flex-col items-center gap-1 sm:items-start">
       <span>
-        Retrieval · Ranking · Evidence · Citations
+        © 2026 Website QA Engine
       </span>
-    </footer>
+
+      <a
+        href="https://uimagician.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-colors hover:text-zinc-700"
+        title="Open portfolio"
+      >
+        sakthig1729@gmail.com
+      </a>
+    </div>
+
+    <span className="text-center">
+      Retrieval · Ranking · Evidence · Citations
+    </span>
+  </div>
+</footer>
   </div>
 </main>
 
